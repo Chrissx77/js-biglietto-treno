@@ -11,11 +11,39 @@ L’output del prezzo finale va messo fuori in forma umana (con massimo due deci
 */
 
 
-
 // Istanziare due variabili tramite input (km, età)
+const userKm = prompt("Quanti km vuoi percorrere?");
+const userAge = prompt("Quanti anni hai?");
+console.log(userAge);
+console.log(userKm);
 
-//Tramite le variabili calcolare il prezzo del viaggio
+//Tramite le variabili calcolare il prezzo del viaggio e l'eventuale sconto
 
-//Applicare eventuale sconto
+let total;
+let price = (userKm * 0.21).toFixed(2);
 
-//Output prezzo finale con massimo due decimali
+if (userAge >= 65) {
+
+    let discount = ((price * 40) / 100).toFixed(2);
+    total = (price - discount).toFixed(2);
+
+    console.log("Il prezzo è: ", price, "$");
+    console.log("Lo sconto è di: ", discount, "$");
+    console.log("Il biglietto è: ", total, "$");
+}
+else if (userAge < 18) {
+    let discount = ((price * 20) / 100).toFixed(2);
+    total = (price - discount).toFixed(2);
+
+    console.log("Il prezzo è: ", price, "$");
+    console.log("Lo sconto è di: ", discount, "$");
+    console.log("Il biglietto è: ", total, "$");
+}
+else {
+    total = price;
+
+    console.log("Il prezzo è: ", total, "$");
+}
+
+//Mandare in out-put lo script
+document.getElementById("my-id").innerHTML = "Il biglietto è: " + total;
