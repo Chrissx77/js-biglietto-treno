@@ -28,7 +28,7 @@ if (userAge >= 65) {
     total = (price - discount).toFixed(2);
 
     console.log("Il prezzo è: ", price, "$");
-    console.log("Lo sconto è di: ", discount, "$");
+    console.log("Lo sconto (40%) è di: ", discount, "$");
     console.log("Il biglietto è: ", total, "$");
 }
 else if (userAge < 18) {
@@ -36,9 +36,15 @@ else if (userAge < 18) {
     total = (price - discount).toFixed(2);
 
     console.log("Il prezzo è: ", price, "$");
-    console.log("Lo sconto è di: ", discount, "$");
+    console.log("Lo sconto (20%) è di: ", discount, "$");
     console.log("Il biglietto è: ", total, "$");
 }
+// else if(userAge < 0){
+//     total = price;
+
+//     console.log("Il prezzo è: ", total, "$");
+
+// }
 else {
     total = price;
 
@@ -46,4 +52,4 @@ else {
 }
 
 //Mandare in out-put lo script
-document.getElementById("my-id").innerHTML = "Il biglietto è: " + total;
+document.getElementById("my-id").innerHTML = "Il biglietto è: " + total + "$";
