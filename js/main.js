@@ -39,12 +39,12 @@ else if (userAge < 18) {
     console.log("Lo sconto (20%) è di: ", discount, "$");
     console.log("Il biglietto è: ", total, "$");
 }
+
 // else if(userAge < 0){
 //     total = price;
-
 //     console.log("Il prezzo è: ", total, "$");
-
 // }
+
 else {
     total = price;
 
