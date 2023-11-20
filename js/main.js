@@ -12,10 +12,8 @@ L’output del prezzo finale va messo fuori in forma umana (con massimo due deci
 
 
 // Istanziare due variabili tramite input (km, età)
-const userKm = prompt("Quanti km vuoi percorrere?");
-const userAge = prompt("Quanti anni hai?");
-console.log(userAge);
-console.log(userKm);
+const userKm = parseInt(prompt("Quanti km vuoi percorrere?"));
+const userAge = parseInt(prompt("Quanti anni hai?"));
 
 //Tramite le variabili calcolare il prezzo del viaggio e l'eventuale sconto
 
@@ -27,6 +25,8 @@ if (userAge >= 65) {
     let discount = ((price * 40) / 100).toFixed(2);
     total = (price - discount).toFixed(2);
 
+    console.log("Età: ", userAge);
+    console.log("Km: ", userKm);
     console.log("Il prezzo è: ", price, "$");
     console.log("Lo sconto (40%) è di: ", discount, "$");
     console.log("Il biglietto è: ", total, "$");
@@ -35,21 +35,26 @@ else if (userAge < 18) {
     let discount = ((price * 20) / 100).toFixed(2);
     total = (price - discount).toFixed(2);
 
+    console.log("Età: ", userAge);
+    console.log("Km: ", userKm);
     console.log("Il prezzo è: ", price, "$");
     console.log("Lo sconto (20%) è di: ", discount, "$");
     console.log("Il biglietto è: ", total, "$");
 }
 
-// else if(userAge < 0){
-//     total = price;
-//     console.log("Il prezzo è: ", total, "$");
+// else if(userAge === NULL){
+//     total = 0;
+//     console.log("Tariffa non valida: ", total, "$");
 // }
 
 else {
     total = price;
 
+    console.log("Età: ", userAge);
+    console.log("Km: ", userKm);
     console.log("Il prezzo è: ", total, "$");
 }
 
 //Mandare in out-put lo script
 document.getElementById("my-id").innerHTML = "Il biglietto è: " + total + "$";
+
